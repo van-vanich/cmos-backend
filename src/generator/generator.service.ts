@@ -195,7 +195,7 @@ export class GeneratorService {
       'Works closely with project teams to relay user feedback and improve the community experience.',
       'Knowledgeable in decentralized applications (dApps), NFTs, DeFi, and governance mechanisms.',
     ];
-    return [...bioStart, ...bioStart];
+    return [...bioStart, ...bio];
   }
 
   generateLore(lore: string[]) {
