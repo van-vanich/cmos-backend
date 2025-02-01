@@ -1,6 +1,6 @@
 import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
 
-@Entity('tokens')
+@Entity('Rivens')
 export class RivensEntity {
   @PrimaryGeneratedColumn()
   id: number;
@@ -43,4 +43,7 @@ export class RivensEntity {
 
   @Column({ type: 'varchar' })
   twitter_secret_key?: string;
+
+  @Column({ type: 'varchar' })
+  knowledge_base?: string;
 }

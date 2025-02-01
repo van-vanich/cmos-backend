@@ -1,9 +1,16 @@
-import { Controller } from '@nestjs/common';
+import { Body, Controller, Param, Post } from '@nestjs/common';
+import { ApiService } from './api.service';
+import { UpdateRivenDto } from '../dto/UpdateRivenDto';
 
 @Controller('api')
-export class ApiController {}
+export class ApiController {
+  constructor(private readonly apiService: ApiService) {}
 
-
-// API:
-// /api/session - init session for create AI CM agent(return id of session)
-// api/{id} -
+  @Post(':id')
+  saveCharacters(
+    @Param('id') id: number,
+    @Body() updateRivenDto: UpdateRivenDto,
+  ) {
+    return this.apiService.saveCharacter(id, updateRivenDto);
+  }
+}

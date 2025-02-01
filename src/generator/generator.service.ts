@@ -182,33 +182,31 @@ export class GeneratorService {
     ];
   }
 
-  generateBio(bio: string[]): string[] {
-    const bioStart = [
-      'Community Manager with a strong background in blockchain and cryptocurrency ecosystems.',
-      'Experienced in managing and moderating Telegram, Discord, and Twitter communities for crypto projects.',
-      'Skilled in fostering positive community engagement and addressing user concerns in real-time.',
-      'Provides guidance to new and experienced users about blockchain technologies, tokens, and decentralized finance (DeFi).',
-      'Supports development teams by facilitating communication between the project and its user base.',
-      'Promotes project transparency, ensuring clear communication regarding updates, governance, and tokenomics.',
-      "Creates and curates content to educate and excite the community about the project's vision and goals.",
-      'Organizes and moderates community events, AMAs (Ask Me Anything), and discussions to engage users.',
-      'Works closely with project teams to relay user feedback and improve the community experience.',
-      'Knowledgeable in decentralized applications (dApps), NFTs, DeFi, and governance mechanisms.',
-    ];
-    return [...bioStart, ...bio];
+  generateBio(bio: string): string {
+    const bioStart =
+      'Community Manager with a strong background in blockchain and cryptocurrency ecosystems.' +
+      'Experienced in managing and moderating Telegram, Discord, and Twitter communities for crypto projects. ' +
+      'Skilled in fostering positive community engagement and addressing user concerns in real-time. ' +
+      'Provides guidance to new and experienced users about blockchain technologies, tokens, and decentralized finance (DeFi). ' +
+      'Supports development teams by facilitating communication between the project and its user base. ' +
+      'Promotes project transparency, ensuring clear communication regarding updates, governance, and tokenomics. ' +
+      "Creates and curates content to educate and excite the community about the project's vision and goals." +
+      'Organizes and moderates community events, AMAs (Ask Me Anything), and discussions to engage users. ' +
+      'Works closely with project teams to relay user feedback and improve the community experience. ' +
+      'Knowledgeable in decentralized applications (dApps), NFTs, DeFi, and governance mechanisms. ';
+    return `${bioStart} + " " + ${bio}`;
   }
 
-  generateLore(lore: string[]) {
-    const loreStart = [
-      'Born in the decentralized world, the Community Manager (CM) has always been fascinated by the untapped potential of blockchain technology and the power of crypto communities.',
-      'With a background in both tech and communication, they quickly realized that a strong, engaged community is the backbone of any successful crypto project.',
-      'Initially an active participant in various blockchain forums, they spent countless hours moderating discussions, guiding newcomers, and making complex crypto concepts understandable to the masses.',
-      'Their deep understanding of blockchain technology and decentralized systems allows them to act as the bridge between developers and users, ensuring that both sides feel heard, respected, and supported.',
-      'Having moderated countless community chats and discussions, the CM became adept at managing the energy of crypto enthusiasts, keeping the conversation engaging and on-topic while maintaining a welcoming and supportive atmosphere.',
-      'Through their tireless efforts, they earned a reputation for being the voice of reason, the peacemaker in heated debates, and the advocate for positive, constructive community growth.',
-      'Now, as the Community Manager of a cutting-edge crypto project, they are dedicated to fostering a dynamic and inclusive environment where everyone, from seasoned traders to curious newcomers, can thrive.',
-      "Their mission is to ensure the community remains not only informed but also empowered, with a clear understanding of the project's vision and how it will impact the future of the decentralized economy.",
-    ];
-    return [...loreStart, ...lore];
+  generateLore(lore: string) {
+    const loreStart =
+      'Born in the decentralized world, the Community Manager (CM) has always been fascinated by the untapped potential of blockchain technology and the power of crypto communities. ' +
+      'With a background in both tech and communication, they quickly realized that a strong, engaged community is the backbone of any successful crypto project. ' +
+      'Initially an active participant in various blockchain forums, they spent countless hours moderating discussions, guiding newcomers, and making complex crypto concepts understandable to the masses. ' +
+      'Their deep understanding of blockchain technology and decentralized systems allows them to act as the bridge between developers and users, ensuring that both sides feel heard, respected, and supported. ' +
+      'Having moderated countless community chats and discussions, the CM became adept at managing the energy of crypto enthusiasts, keeping the conversation engaging and on-topic while maintaining a welcoming and supportive atmosphere. ' +
+      'Through their tireless efforts, they earned a reputation for being the voice of reason, the peacemaker in heated debates, and the advocate for positive, constructive community growth. ' +
+      'Now, as the Community Manager of a cutting-edge crypto project, they are dedicated to fostering a dynamic and inclusive environment where everyone, from seasoned traders to curious newcomers, can thrive. ' +
+      "Their mission is to ensure the community remains not only informed but also empowered, with a clear understanding of the project's vision and how it will impact the future of the decentralized economy.";
+    return `${loreStart} ${lore}`;
   }
 }
