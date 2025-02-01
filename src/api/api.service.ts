@@ -26,4 +26,22 @@ export class ApiService {
       stylePost: this.generatorService.generateStyle().post,
     });
   }
+
+  async updateRivenByName(name: string, updateData: { ticker?: string; logo?: string }) {
+    const riven = await this.rivenRepository.findOneBy({ name });
+
+    if (!riven) {
+      console.log(`token with name=${name} not found`);
+      return null;
+    }
+
+    if (updateData.ticker) {
+      riven.ticker = updateData.ticker;
+    }
+    if (updateData.logo) {
+      riven.logo = updateData.logo;
+    }
+
+    return this.rivenRepository.save(riven);
+  }
 }
