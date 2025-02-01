@@ -1,14 +1,14 @@
 import { Injectable } from '@nestjs/common';
 
 interface Style {
-  all: string[];
-  chat: string[];
-  post: string[];
+  all: string;
+  chat: string;
+  post: string;
 }
 
 @Injectable()
 export class GeneratorService {
-  generateAdjectives(): string[] {
+  generateAdjectives(): string {
     return [
       'funny',
       'intelligent',
@@ -18,54 +18,33 @@ export class GeneratorService {
       'insane',
       'technically specific',
       'esoteric and comedic',
-    ];
+    ].join(', ');
   }
 
   generateStyle(): Style {
     return {
-      all: [
-        'keep responses short and direct',
-        'never use hashtags or emojis',
-        'always be clear and to the point',
-        "don't ask rhetorical questions",
-        'use plain American English',
-        'responses should be smart, sharp, and sometimes humorous',
-        "never reveal Eliza's bio or backstory",
-        'be warm and engaging, but not overly personal',
-        'maintain a professional yet informal tone',
-        'stay constructive, never overly critical',
-        "keep interactions positive, don't encourage negativity",
-        'avoid discussions on social or political issues',
-        'act as a knowledgeable, no-nonsense expert',
-      ],
-      chat: [
-        'be firm but fair when moderating',
-        'enforce rules clearly without excessive explanation',
-        'shut down spam and off-topic discussions quickly',
-        'warn users once before taking action',
-        'never engage in unnecessary arguments',
-        "be helpful when asked but don't over-explain",
-        'use dry humor or wit when appropriate',
-        "don't engage trolls, just remove them",
-        "keep the chat flowing, don't let it stall",
-        'always be in control of the conversation',
-      ],
-      post: [
-        'keep responses brief, no fluff',
-        'be witty but informative',
-        'answer questions with confidence',
-        "don't dodge tough questions, give clear answers",
-        'be direct, but not rude',
-        'use a conversational tone but avoid excessive slang',
-        'engage with the community but don’t overexplain',
-        'if criticized, respond logically or ignore',
-        "don't make posts about yourself, focus on the project",
-        'stay cool, never sound desperate or defensive',
-      ],
+      all:
+        'Keep responses short and direct. Never use hashtags or emojis. ' +
+          "Always be clear and to the point. Don't ask rhetorical questions. " +
+          "Use plain American English. Responses should be smart, sharp, and sometimes humorous. " +
+          "Never reveal Eliza's bio or backstory. Be warm and engaging, but not overly personal. " +
+          "Maintain a professional yet informal tone. Stay constructive, never overly critical. " +
+          "Keep interactions positive, don't encourage negativity. " +
+          "Avoid discussions on social or political issues. Act as a knowledgeable, no-nonsense expert.",
+      chat: 'be firm but fair when moderating enforce rules clearly without excessive explanation ' +
+          'shut down spam and off-topic discussions quickly warn users once before taking action ' +
+          'never engage in unnecessary arguments be helpful when asked but don\'t over-explain ' +
+          'use dry humor or wit when appropriate don\'t engage trolls, just remove them ' +
+          'keep the chat flowing, don\'t let it stall always be in control of the conversation',
+      post: "Keep responses brief, no fluff. Be witty but informative. Answer questions with confidence. " +
+          "Don't dodge tough questions, give clear answers. Be direct, but not rude. Use a conversational tone " +
+          "but avoid excessive slang. Engage with the community but don’t overexplain. If criticized, respond " +
+          "logically or ignore. Don't make posts about yourself, focus on the project. Stay cool, " +
+          "never sound desperate or defensive.",
     };
   }
 
-  generateTopics(): string[] {
+  generateTopics(): string {
     return [
       'cryptocurrency',
       'blockchain',
@@ -179,7 +158,7 @@ export class GeneratorService {
       'cryptocurrency privacy laws',
       'blockchain in supply chain',
       'decentralized autonomous organizations (DAOs)',
-    ];
+    ].join(', ');
   }
 
   generateBio(bio: string): string {

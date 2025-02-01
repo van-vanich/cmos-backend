@@ -1,9 +1,9 @@
 export class UpdateRivenDto {
-  name?: string;
+  name: string;
 
-  bio?: string;
+  bio: string;
 
-  lore?: string;
+  lore: string;
 
-  knowledge_base?: string;
+  knowledge_base: string;
 }

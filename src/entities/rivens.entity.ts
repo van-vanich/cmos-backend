@@ -9,7 +9,7 @@ export class RivensEntity {
   name: string;
 
   @Column({ type: 'varchar' })
-  ticker: string;
+  ticker?: string;
 
   @Column({ type: 'varchar' })
   logo?: string;
@@ -18,22 +18,25 @@ export class RivensEntity {
   open_api_key?: string;
 
   @Column({ type: 'varchar' })
-  bio?: string; //improved in backend
+  bio: string; //improved in backend
 
   @Column({ type: 'varchar' })
-  lore?: string; //improved in backend
+  lore: string; //improved in backend
 
   @Column({ type: 'varchar' })
-  topics?: string; //generated in backend
+  topics: string; //generated in backend
 
   @Column({ type: 'varchar' })
-  system?: string; //generated in backend
+  adjectives: string; //generated in backend
 
   @Column({ type: 'varchar' })
-  adjectives?: string; //generated in backend
+  styleGeneral: string; //generated in backend
 
   @Column({ type: 'varchar' })
-  style?: string; //generated in backend
+  styleChat: string; //generated in backend
+
+  @Column({ type: 'varchar' })
+  stylePost: string; //generated in backend
 
   @Column({ type: 'varchar' })
   twitter_login?: string;
@@ -45,5 +48,5 @@ export class RivensEntity {
   twitter_secret_key?: string;
 
   @Column({ type: 'varchar' })
-  knowledge_base?: string;
+  knowledge_base: string;
 }

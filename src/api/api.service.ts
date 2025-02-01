@@ -13,29 +13,17 @@ export class ApiService {
     private readonly generatorService: GeneratorService,
   ) {}
 
-  async saveCharacter(
-    id: number,
-    updateRivenDto: UpdateRivenDto,
-  ): Promise<RivensEntity | null> {
-    const riven = await this.rivenRepository.findOne({ where: { id } });
-    if (!riven) {
-      console.log(`Riven with ID ${id} not found`);
-      return null;
-    }
-
-    if (updateRivenDto.bio) {
-      riven.bio = this.generatorService.generateBio(updateRivenDto.bio);
-    }
-    if (updateRivenDto.name) {
-      riven.name = updateRivenDto.name;
-    }
-    if (updateRivenDto.lore) {
-      riven.lore = this.generatorService.generateLore(updateRivenDto.lore);
-    }
-    if (updateRivenDto.knowledge_base) {
-      riven.knowledge_base = updateRivenDto.knowledge_base;
-    }
-
-    return this.rivenRepository.save(riven);
+  saveCharacter(updateRivenDto: UpdateRivenDto): RivensEntity | null {
+    return this.rivenRepository.create({
+      name: updateRivenDto.name,
+      bio: this.generatorService.generateBio(updateRivenDto.bio),
+      lore: this.generatorService.generateLore(updateRivenDto.lore),
+      knowledge_base: updateRivenDto.knowledge_base,
+      topics: this.generatorService.generateTopics(),
+      adjectives: this.generatorService.generateAdjectives(),
+      styleGeneral: this.generatorService.generateStyle().all,
+      styleChat: this.generatorService.generateStyle().chat,
+      stylePost: this.generatorService.generateStyle().post,
+    });
   }
 }

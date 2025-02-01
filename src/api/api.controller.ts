@@ -1,4 +1,4 @@
-import { Body, Controller, Param, Post } from '@nestjs/common';
+import { Body, Controller, Post } from '@nestjs/common';
 import { ApiService } from './api.service';
 import { UpdateRivenDto } from '../dto/UpdateRivenDto';
 
@@ -6,11 +6,10 @@ import { UpdateRivenDto } from '../dto/UpdateRivenDto';
 export class ApiController {
   constructor(private readonly apiService: ApiService) {}
 
-  @Post(':id')
+  @Post()
   saveCharacters(
-    @Param('id') id: number,
     @Body() updateRivenDto: UpdateRivenDto,
   ) {
-    return this.apiService.saveCharacter(id, updateRivenDto);
+    return this.apiService.saveCharacter(updateRivenDto);
   }
 }
