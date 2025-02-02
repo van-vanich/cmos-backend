@@ -27,7 +27,10 @@ export class ApiService {
     });
   }
 
-  async updateRivenByName(name: string, updateData: { ticker?: string; logo?: string }) {
+  async updateRivenByName(
+    name: string,
+    updateData: { ticker?: string; logo?: string },
+  ) {
     const riven = await this.rivenRepository.findOneBy({ name });
 
     if (!riven) {
